@@ -7,6 +7,7 @@ class Visitor < ActiveRecord::Base
   def subscribe
     mailchimp = Gibbon::API.new(Rails.application.secrets.mailchimp_api_key)
     puts "Mailchimp List id: #{Rails.application.secrets.mailchimp_list_id}"
+    puts "Maichimp api key: #{Rails.application.secrets.mailchimp_api_key}"
     result = mailchimp.lists.subscribe({
       :id => Rails.application.secrets.mailchimp_list_id,
       :email => {:email => self.email},
