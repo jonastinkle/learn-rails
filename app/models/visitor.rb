@@ -9,8 +9,9 @@ class Visitor < ActiveRecord::Base
     puts "Mailchimp List id: #{Rails.application.secrets.mailchimp_list_id}"
     puts "Maichimp api key: #{Rails.application.secrets.mailchimp_api_key}"
     puts "Something something:" + Rails.application.secrets.email_provider_username
+    puts "DASDASDASDASDASDASDASD"
     result = mailchimp.lists.subscribe({
-      :id => Rails.application.secrets.mailchimp_list_id,
+      :id => "04db998b58",
       :email => {:email => self.email},
       :double_optin => false,
       :update_existing => true,
