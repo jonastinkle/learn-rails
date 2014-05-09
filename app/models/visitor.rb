@@ -5,7 +5,7 @@ class Visitor < ActiveRecord::Base
   validates_format_of :email, :with => /\A[-a-z0-9_+\.]+\@([-a-z0-9]+\.)+[a-z0-9]{2,4}\z/i
   
   def subscribe
-    mailchimp = Gibbon::API.new(Rails.application.secrets.mailchimp_api_key)
+    mailchimp = Gibbon::API.new("6da5f713c119eb66976a7483cb9ce654-us8")
     puts "Mailchimp List id: #{Rails.application.secrets.mailchimp_list_id}"
     puts "Maichimp api key: #{Rails.application.secrets.mailchimp_api_key}"
     puts "Something something:" + Rails.application.secrets.email_provider_username
